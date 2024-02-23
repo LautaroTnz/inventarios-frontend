@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-producto-lista',
@@ -21,4 +23,6 @@ export class ProductoListaComponent {
       this.productos = datos;
     });
   }
+
+  
 }

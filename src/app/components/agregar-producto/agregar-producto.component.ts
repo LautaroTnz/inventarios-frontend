@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-producto',
@@ -14,17 +15,40 @@ export class AgregarProductoComponent {
   constructor(private productoServicio: ProductoService, private enrutador: Router){}
 
   onSubmit(){
-    this.guardarProducto();
+    this.mostrarAlerta();
   }
 
   guardarProducto(){
     this.productoServicio.agregarProducto(this.producto).subscribe(
       {
         next: (datos) => {
+          this.mostrarMensajeExito();
           this.volver();
         },
         error: (error: any)=> {console.log(error)}
       }
+    );
+  }
+
+  mostrarAlerta() {
+    Swal.fire({
+      title: '¿Estás seguro de guardar el producto?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Guardar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.guardarProducto();
+      }
+    });
+  }
+
+  mostrarMensajeExito() {
+    Swal.fire(
+      '¡Guardado!',
+      'El producto se guardo correctamente.',
+      'success'
     );
   }
 
