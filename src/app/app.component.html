@@ -1,3 +1,34 @@
-<h1>APP COMPONENT</h1>
 
-<router-outlet></router-outlet>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" routerLink="productos">Sistema de Inventarios</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="productos" routerLinkActive="active" href="/"><i class="uil uil-estate"></i> Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="agregar-producto" routerLinkActive="active"><i class="uil uil-shopping-bag"></i> Agregar Producto</a>
+              </li>P
+            </ul>
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-link" href="/cerrar-sesion"><i class="uil uil-signout"></i> Cerrar Sesión</a>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+
+    <footer class="footer mt-5 py-3 bg-dark text-white">
+        <div class="container text-center">
+        <span>&copy; 2024 Sistema de Inventarios</span>
+        </div>
+    </footer>
+
