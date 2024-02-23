@@ -19,9 +19,9 @@
         <td>{{ producto.descripcion }}</td>
         <td>{{ producto.precio }}</td>
         <td>{{ producto.existencia }}</td>
-        <td>
-          <button class="btn btn-warning btn-sm me-2"><i class="uil uil-edit"></i> Modificar</button> <!-- Botón Modificar -->
-          <button class="btn btn-danger btn-sm"><i class="uil uil-trash-alt"></i> Borrar</button>
+        <td class="text-center">
+          <button class="btn btn-warning btn-sm me-2" (click)="editarProducto(producto.idProducto)"><i class="uil uil-edit"></i> Modificar</button> <!-- Botón Modificar -->
+          <button class="btn btn-danger btn-sm" (click)="eliminarProducto(producto.idProducto)"><i class="uil uil-trash-alt"></i> Borrar</button>
         </td>
       </tr>
     </tbody>

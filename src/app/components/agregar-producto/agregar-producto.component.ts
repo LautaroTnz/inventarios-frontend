@@ -36,7 +36,9 @@ export class AgregarProductoComponent {
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Guardar',
-      cancelButtonText: 'Cancelar'
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
     }).then((result) => {
       if (result.isConfirmed) {
         this.guardarProducto();
