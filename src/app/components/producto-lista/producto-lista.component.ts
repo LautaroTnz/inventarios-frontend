@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import { TableModule } from 'primeng/table';
 import Swal from 'sweetalert2';
-
 
 @Component({
   selector: 'app-producto-lista',
@@ -13,7 +13,10 @@ import Swal from 'sweetalert2';
 export class ProductoListaComponent {
   productos: Producto[];
 
-  constructor(private productoServicio: ProductoService, private enrutador: Router) {}
+  constructor(
+    private productoServicio: ProductoService,
+    private enrutador: Router
+  ) {}
 
   ngOnInit() {
     this.obtenerProductos();
@@ -42,7 +45,7 @@ export class ProductoListaComponent {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar'
+      cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
         this.productoServicio.eliminarProducto(id).subscribe({
@@ -61,11 +64,9 @@ export class ProductoListaComponent {
               'Hubo un error al intentar eliminar el producto. Por favor, inténtalo de nuevo más tarde.',
               'error'
             );
-          }
+          },
         });
       }
     });
   }
-  
-  
 }
