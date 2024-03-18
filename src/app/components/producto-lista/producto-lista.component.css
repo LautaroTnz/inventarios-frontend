@@ -1,0 +1,9 @@
+.btn-group {
+    display: flex;
+    flex-direction: row;
+  }
+  
+
+  .tabla-container {
+    margin-top: 25px;
+  }
