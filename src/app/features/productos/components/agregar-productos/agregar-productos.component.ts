@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Producto } from 'src/app/models/producto';
-import { ProductoService } from 'src/app/services/producto.service';
+import { Producto } from '../../models/producto';
 import Swal from 'sweetalert2';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-agregar-productos',
@@ -13,7 +13,7 @@ export class AgregarProductosComponent {
   producto: Producto = new Producto();
 
   constructor(
-    private productoServicio: ProductoService,
+    private productoServicio: ProductosService,
     private enrutador: Router
   ) {}
 
