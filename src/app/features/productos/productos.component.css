@@ -1,0 +1,29 @@
+/* Estilos globales */
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Estilos para el contenedor principal */
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  /* Estilos para el HeaderComponent */
+  app-header {
+    flex: 0 0 auto; /* El HeaderComponent no se estirará */
+  }
+  
+  /* Estilos para el contenido del módulo */
+  .router-content {
+    flex: 1; /* El contenido del módulo se expandirá para ocupar todo el espacio disponible */
+  }
+  
+  /* Estilos para el FooterComponent */
+  app-footer {
+    flex: 0 0 auto; /* El FooterComponent no se estirará */
+  }
+  

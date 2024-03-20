@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 d-flex">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="productos">Sistema de Inventarios</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="productos"
+            routerLinkActive="active"
+            href="/"
+            ><i class="uil uil-estate"></i> Inicio</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="uil uil-shopping-bag"></i> Productos
+          </a>
+          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            <li>
+              <a
+                class="dropdown-item text-light"
+                (click)="navigateToAgregarProductos()"
+                ><i class="uil uil-plus"></i> Agregar Producto</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item text-light"
+                (click)="navigateToListarProductos()"
+                ><i class="uil uil-list-ul"></i> Ver Productos</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-nav">
+      <a class="nav-link" href="/cerrar-sesion"
+        ><i class="uil uil-signout"></i> Cerrar Sesión</a
+      >
+    </div>
+  </div>
+</nav>

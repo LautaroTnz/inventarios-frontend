@@ -1,12 +1,4 @@
-
-.dropdown-menu {
-    background-color: #343a40;
-  }
-  
-  .dropdown-menu a {
-    color: #ffffff;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: #007bff;
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
   }

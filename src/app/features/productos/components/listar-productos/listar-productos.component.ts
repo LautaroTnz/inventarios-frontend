@@ -5,11 +5,11 @@ import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-producto-lista',
-  templateUrl: './producto-lista.component.html',
-  styleUrls: ['./producto-lista.component.css'],
+  selector: 'app-listar-productos',
+  templateUrl: './listar-productos.component.html',
+  styleUrls: ['./listar-productos.component.css'],
 })
-export class ProductoListaComponent {
+export class ListarProductosComponent {
   productos: Producto[];
 
   constructor(
@@ -29,7 +29,7 @@ export class ProductoListaComponent {
 
   editarProducto(id: number) {
     if (id !== undefined) {
-      this.enrutador.navigate(['editar-producto', id]);
+      this.enrutador.navigate(['productos/modificar-productos', id]);
     } else {
       console.error('ID de producto indefinido');
     }

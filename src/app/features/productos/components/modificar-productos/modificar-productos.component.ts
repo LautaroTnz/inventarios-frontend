@@ -5,27 +5,28 @@ import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-modificar-producto',
-  templateUrl: './modificar-producto.component.html',
-  styleUrls: ['./modificar-producto.component.css']
+  selector: 'app-modificar-productos',
+  templateUrl: './modificar-productos.component.html',
+  styleUrls: ['./modificar-productos.component.css'],
 })
-export class ModificarProductoComponent {
+export class ModificarProductosComponent {
   producto: Producto = new Producto();
   id: number;
 
-  constructor(private productoServicio: ProductoService, private ruta: ActivatedRoute, private enrutador: Router){}
+  constructor(
+    private productoServicio: ProductoService,
+    private ruta: ActivatedRoute,
+    private enrutador: Router
+  ) {}
 
-  ngOnInit(){
-
+  ngOnInit() {
     this.id = this.ruta.snapshot.params['id'];
-    this.productoServicio.obtenerProductoPorId(this.id).subscribe(
-      {
-        next: (datos) => this.producto = datos
-      }
-    );
+    this.productoServicio.obtenerProductoPorId(this.id).subscribe({
+      next: (datos) => (this.producto = datos),
+    });
   }
 
-  onSubmit(){
+  onSubmit() {
     this.mostrarAlerta();
   }
 
@@ -45,16 +46,16 @@ export class ModificarProductoComponent {
     });
   }
 
-  guardarProducto(){
-    this.productoServicio.editarProducto(this.id, this.producto).subscribe(
-      {
-        next: (datos) => {
-          this.mostrarMensajeExito();
-          this.volver();
-        },
-        error: (error: any)=> {console.log(error)}
-      }
-    );
+  guardarProducto() {
+    this.productoServicio.editarProducto(this.id, this.producto).subscribe({
+      next: (datos) => {
+        this.mostrarMensajeExito();
+        this.volver();
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
+    });
   }
 
   mostrarMensajeExito() {
@@ -65,7 +66,7 @@ export class ModificarProductoComponent {
     );
   }
 
-  volver(){
-    this.enrutador.navigate(['/productos'])
+  volver() {
+    this.enrutador.navigate(['/productos']);
   }
 }
