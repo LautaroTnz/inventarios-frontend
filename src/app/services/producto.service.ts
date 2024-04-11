@@ -9,25 +9,26 @@ import { Producto } from '../models/producto';
 export class ProductoService {
   constructor(private clienteHttp: HttpClient) {}
 
-  private urlBase = 'http://localhost:8080/inventario-app/productos';
+  private urlBase =
+    'https://inventarios-backend.zeabur.app/inventario-app/productos';
 
   obtenerProductos(): Observable<Producto[]> {
     return this.clienteHttp.get<Producto[]>(this.urlBase);
   }
 
-  agregarProducto(producto: Producto): Observable<Object>{
+  agregarProducto(producto: Producto): Observable<Object> {
     return this.clienteHttp.post(this.urlBase, producto);
   }
 
-  obtenerProductoPorId(id: number){
-    return this.clienteHttp.get<Producto>(`${this.urlBase}/${id}`)
+  obtenerProductoPorId(id: number) {
+    return this.clienteHttp.get<Producto>(`${this.urlBase}/${id}`);
   }
 
-  editarProducto(id: number, producto: Producto): Observable<Object>{
+  editarProducto(id: number, producto: Producto): Observable<Object> {
     return this.clienteHttp.put(`${this.urlBase}/${id}`, producto);
   }
 
-  eliminarProducto(id: number):Observable<Object>{
-    return this.clienteHttp.delete(`${this.urlBase}/${id}`)
+  eliminarProducto(id: number): Observable<Object> {
+    return this.clienteHttp.delete(`${this.urlBase}/${id}`);
   }
 }
