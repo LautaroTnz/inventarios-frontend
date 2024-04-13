@@ -10,7 +10,7 @@ export class ProductoService {
   constructor(private clienteHttp: HttpClient) {}
 
   private urlBase =
-    'https://inventarios-backend.zeabur.app/inventario-app/productos';
+    'https://inventarios-backend-e5h0.onrender.com';
 
   obtenerProductos(): Observable<Producto[]> {
     return this.clienteHttp.get<Producto[]>(this.urlBase);
