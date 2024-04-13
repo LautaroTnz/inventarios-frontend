@@ -10,7 +10,7 @@ export class ProductoService {
   constructor(private clienteHttp: HttpClient) {}
 
   private urlBase =
-    'https://inventarios-backend-e5h0.onrender.com';
+    'https://inventarios-backend-e5h0.onrender.com/inventario-app/productos';
 
   obtenerProductos(): Observable<Producto[]> {
     return this.clienteHttp.get<Producto[]>(this.urlBase);
